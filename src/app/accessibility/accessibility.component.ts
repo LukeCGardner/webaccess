@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+import { Router } from '@angular/router';
+import { Global } from './../core/global';
+
 import { Record } from './../core/record.model';
 
 @Component({
@@ -11,16 +14,19 @@ import { Record } from './../core/record.model';
 
 export class AccessibilityComponent implements OnInit {
 
+  public path: string;
+  
   public record: Record;
   public records: Array<Record>;
 
   public currentRecord: string;
   
-
-  constructor() { }
+  constructor (private router: Router,
+		           private global: Global) { }
 
   ngOnInit() {
 
+    this.global.path = this.router.url;
     this.record = new Record({});
 
   }

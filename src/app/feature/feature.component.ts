@@ -5,12 +5,12 @@ import { Router } from '@angular/router';
 import { Global } from './../core/global';
 
 @Component({
-  selector: 'app-portal',
-  templateUrl: './portal.component.html',
-  styleUrls: ['./portal.component.css']
+  selector: 'app-feature',
+  templateUrl: './feature.component.html',
+  styleUrls: ['./feature.component.css']
 })
 
-export class PortalComponent implements OnInit {
+export class FeatureComponent implements OnInit {
 
   constructor(
     private router: Router,

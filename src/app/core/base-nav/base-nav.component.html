@@ -1,3 +1,4 @@
+<a href="{{global.path}}#content" class="skip">Skip to content</a>
 <div *ngIf="search.term"><p>the search term entered was:- {{ search.term }}</p></div>
 
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
@@ -33,13 +34,13 @@
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li>
-                <a routerLink="/" routerLinkActive="active">
-                    <div>Portal</div>
+                <a routerLink="/overview" routerLinkActive="active">
+                    <div>Overview</div>
                 </a>
             </li>
             <li>
-                <a routerLink="/accessibility" routerLinkActive="active">
-                    <div>Form</div>
+                <a routerLink="/feature" routerLinkActive="active">
+                    <div>Feature</div>
                 </a>
             </li>
         </ul>

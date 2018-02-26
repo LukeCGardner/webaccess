@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Global } from './../../core/global';
 
 import { Search } from './../../core/search.model';
 
@@ -11,7 +12,7 @@ export class BaseNavComponent implements OnInit {
 
   public search: Search;
 
-  constructor() { }
+  constructor(private global: Global) { }
 
   ngOnInit() {
 
