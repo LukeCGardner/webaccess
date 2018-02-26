@@ -1,4 +1,136 @@
 <div id="content">
   <h1>Feature</h1>
   <p>content goes here.</p>
+  <select size="1" id="bird-selector" aria-controls="bird-info">
+    <option>Black Redstart</option>
+    <option>Greenshank</option>
+    <option>Meadow Pipit</option>
+    <option>Sandwich Tern</option>
+  </select>
+
+  <hr />
+  <h2>Button</h2>
+  <input id="button" type="button" value="Click Me">
+  <br />
+  <br />
+  <h2>Datalist</h2>
+  <br />
+  <label for="myBrowser">Choose a browser from this list:</label>
+  <input list="browsers" id="myBrowser" name="myBrowser" />
+  <datalist id="browsers">
+    <option value="Chrome">
+      <option value="Firefox">
+        <option value="Internet Explorer">
+          <option value="Opera">
+            <option value="Safari">
+              <option value="Microsoft Edge">
+  </datalist>
+  <br />
+  <br />
+  <h2>Fieldset</h2>
+  <form #newForm="ngForm" (ngSubmit)="onSubmit(newForm)" novalidate>
+    <fieldset>
+      <legend>Title</legend>
+      <input type="radio" id="radio">
+      <label for="radio">Click me</label>
+    </fieldset>
+    <fieldset>
+      <label for="range">Range</label>
+      <input id="range" type="range" max="10" min="0" step="2">
+    </fieldset>
+    <fieldset>
+      <label for="checkBox">Checkbox</label>
+      <input id="checkBox" type="checkbox">
+    </fieldset>
+    <fieldset>
+      <label for="colour">Colour</label>
+      <input id="colour" type="color" value="#ff0000">
+    </fieldset>
+    <fieldset>
+      <label for="date">Date</label>
+      <input id="date" type="date">
+    </fieldset>
+    <fieldset>
+      <label for="datetime">Date & Time</label>
+      <input id="datetime" type="datetime-local">
+    </fieldset>
+    <fieldset>
+      <label for="email">Email</label>
+      <input type="email" placeholder="email@domain.com" list="defaultEmails">
+
+      <datalist id="defaultEmails">
+        <option value="jbond007@mi6.defence.gov.uk">
+          <option value="jbourne@unknown.net">
+            <option value="nfury@shield.org">
+              <option value="tony@starkindustries.com">
+                <option value="hulk@grrrrrrrr.arg">
+      </datalist>
+    </fieldset>
+    <fieldset>
+      <label for="myFile">File</label>
+      <input id="myFile" name="myFile" type="file">
+    </fieldset>
+    <fieldset>
+      <label for="image">Image</label>
+      <input id="image" type="image" alt="Login" src="https://raw.githubusercontent.com/mdn/learning-area/master/html/forms/image-type-example/login.png">
+    </fieldset>
+    <fieldset>
+      <label for="month">Month</label>
+      <input id="month" type="month">
+    </fieldset>
+    <fieldset>
+      <label for="number">Number</label>
+      <input id="number" type="number" value="42">
+    </fieldset>
+    <fieldset>
+      <label for="userPassword">Password</label>
+      <input id="userPassword" type="password">
+    </fieldset>
+    <fieldset>
+      <label for="pin">PIN</label>
+      <input id="pin" type="password" id="pin" type="password" inputmode="numeric" minlength="4" maxlength="8" size="8">
+    </fieldset>
+    <fieldset>
+      <input type="search" id="mySearch" name="q" placeholder="Search the site...">
+      <button>Search</button>
+    </fieldset>
+    <fieldset>
+      <label for="telNo">Enter a telephone number (in the form xxx-xxx-xxxx): </label>
+      <input id="telNo" name="telNo" type="tel" placeholder="123-4567-8901" required pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}">
+    </fieldset>
+    <fieldset>
+      <label for="startTime">Start time: </label>
+      <input type="time" id="startTime">
+    </fieldset>
+    <fieldset>
+      <label for="url">url: </label>
+      <input type="url" id="url">
+    </fieldset>
+    <fieldset>
+      <label for="week">Week: </label>
+      <input type="week" id="week">
+    </fieldset>
+  </form>
+  <h2>Meter</h2>
+  <p>Heat the oven to
+    <meter low="250" high="450" min="200" max="500" value="350">350 degrees</meter>.</p>
+  <h2>optGroup</h2>
+  <select>
+    <optgroup label="Group 1">
+      <option>Option 1.1</option>
+    </optgroup>
+    <optgroup label="Group 2">
+      <option>Option 2.1</option>
+      <option>Option 2.2</option>
+    </optgroup>
+    <optgroup label="Group 3" disabled>
+      <option>Option 3.1</option>
+      <option>Option 3.2</option>
+      <option>Option 3.3</option>
+    </optgroup>
+  </select>
+  <h2>Progress</h2>
+  <progress value="70" max="100">70 %</progress>
+  <h2>Range</h2>
+
 </div>

@@ -13,9 +13,7 @@ import { Record } from './../core/record.model';
 })
 
 export class AccessibilityComponent implements OnInit {
-
-  public path: string;
-  
+ 
   public record: Record;
   public records: Array<Record>;
 
