@@ -7,7 +7,6 @@
     <option>Meadow Pipit</option>
     <option>Sandwich Tern</option>
   </select>
-
   <hr />
   <h2>Button</h2>
   <input id="button" type="button" value="Click Me">
@@ -29,6 +28,24 @@
   <br />
   <h2>Fieldset</h2>
   <form #newForm="ngForm" (ngSubmit)="onSubmit(newForm)" novalidate>
+    <fieldset>
+      <legend>The play
+        <cite>Hamlet</cite> was written by:</legend>
+      <input type="radio" id="shakesp" name="hamlet" checked="checked" value="a">
+      <label for="shakesp">William Shakespeare</label>
+      <br />
+      <input type="radio" id="kipling" name="hamlet" value="b">
+      <label for="kipling">Rudyard Kipling</label>
+      <br />
+      <input type="radio" id="gbshaw" name="hamlet" value="c">
+      <label for="gbshaw">George Bernard Shaw</label>
+      <br />
+      <input type="radio" id="hem" name="hamlet" value="d">
+      <label for="hem">Ernest Hemingway</label>
+      <br />
+      <input type="radio" id="dickens" name="hamlet" value="e">
+      <label for="dickens">Charles Dickens</label>
+    </fieldset>
     <fieldset>
       <legend>Title</legend>
       <input type="radio" id="radio">

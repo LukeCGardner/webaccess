@@ -37,4 +37,9 @@ export class AccessibilityComponent implements OnInit {
     newForm.reset();
   }
 
+  getFocus(eleId: string): void {
+    console.log('hello world');        
+    document.getElementById(eleId).focus();
+  }
+
 }

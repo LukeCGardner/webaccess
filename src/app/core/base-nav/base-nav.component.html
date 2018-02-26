@@ -1,4 +1,4 @@
-<a href="{{global.path}}#content" class="skip">Skip to content</a>
+<a href="{{global.path}}#content" class="skip_">Skip to content</a>
 <div *ngIf="search.term"><p>the search term entered was:- {{ search.term }}</p></div>
 
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
@@ -23,7 +23,7 @@
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" id="search" type="text" name="search" placeholder="Search" [(ngModel)]="search.term"
+            <input class="form-control mr-sm-2" id="search" type="search" name="search" placeholder="Search" [(ngModel)]="search.term"
                 #search="ngModel" required>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>

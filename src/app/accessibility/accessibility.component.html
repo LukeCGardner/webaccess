@@ -6,32 +6,49 @@
       <label for="firstName">First Name</label>
       <input type="text" class="form-control" id="firstName" minlength="3" maxlength="30" placeholder="Please enter the first name"
         name="firstName" [(ngModel)]="record.firstName" #firstName="ngModel" required>
-      <div *ngIf="firstName.errors && (firstName.dirty || firstName.touched)" class="alert alert-danger">
-        <div [hidden]="!firstName.errors.required" role="alert">The contact first name is required!</div>
-        <div [hidden]="!firstName.errors.minlength" role="alert">The contact first name must be at least 3 characters long.</div>
-        <div [hidden]="!firstName.errors.maxlength" role="alert">The contact first name cannot be more than 30 characters long.</div>
-      </div>
     </fieldset>
 
     <fieldset class="form-group">
       <label for="lastName">Last Name</label>
       <input type="text" class="form-control" id="lastName" minlength="3" maxlength="30" placeholder="Please enter the last name"
         name="lastName" [(ngModel)]="record.lastName" #lastName="ngModel" required>
-      <div *ngIf="lastName.errors && (lastName.dirty || lastName.touched)" class="alert alert-danger">
-        <div [hidden]="!lastName.errors.required" role="alert">The contact last name is required!</div>
-        <div [hidden]="!lastName.errors.minlength" role="alert">The contact last must be at least 3 characters long.</div>
-        <div [hidden]="!lastName.errors.maxlength" role="alert">The contact last cannot be more than 30 characters long.</div>
-      </div>
     </fieldset>
 
     <fieldset class="form-group">
       <label for="emailAddress">Email Address</label>
       <input type="text" class="form-control" id="emailAddress" placeholder="Please enter an email address" name="emailAddress"
         [(ngModel)]="record.emailAddress" #emailAddress="ngModel" required>
-      <div *ngIf="emailAddress.errors && (emailAddress.dirty || emailAddress.touched)" class="alert alert-danger" role="alert">
-        <div [hidden]="!emailAddress.errors.required" role="alert">The contact email address is required!</div>
-      </div>
     </fieldset>
+
+    <div *ngIf="!newForm.form.pristine && !newForm.form.valid" class="alert alert-danger">
+      <div *ngIf="firstName.errors && (firstName.dirty || firstName.touched)">
+        <div [hidden]="!firstName.errors.required" role="alert">
+          <a (click)="getFocus('firstName')">The contact first name is required!</a>
+        </div>
+        <div [hidden]="!firstName.errors.minlength" role="alert">
+          <a (click)="getFocus('firstName')">The contact first name must be at least 3 characters long.</a>
+        </div>
+        <div [hidden]="!firstName.errors.maxlength" role="alert">
+          <a (click)="getFocus('firstName')">The contact first name cannot be more than 30 characters long.</a>
+        </div>
+      </div>
+      <div *ngIf="lastName.errors && (lastName.dirty || lastName.touched)">
+        <div [hidden]="!lastName.errors.required" role="alert">
+          <a (click)="getFocus('lastName')">The contact last name is required!</a>
+        </div>
+        <div [hidden]="!lastName.errors.minlength" role="alert">
+          <a (click)="getFocus('lastName')">The contact last name must be at least 3 characters long.</a>
+        </div>
+        <div [hidden]="!lastName.errors.maxlength" role="alert">
+          <a (click)="getFocus('lastName')">The contact last name cannot be more than 30 characters long.</a>
+        </div>
+      </div>
+      <div *ngIf="emailAddress.errors && (emailAddress.dirty || emailAddress.touched)">
+        <div [hidden]="!emailAddress.errors.required" role="alert">
+          <a (click)="getFocus('emailAddress')">The contact email address is required!</a>
+        </div>
+      </div>
+    </div>
 
     <button type="submit" class="_btn _btn-success" mat-raised-button color="accent" [disabled]="!newForm.form.valid">Submit</button>
     <button type="button" class="_btn _btn-default" mat-raised-button color="primary" (click)="newForm.reset()">Clear</button>
