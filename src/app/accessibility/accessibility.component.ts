@@ -13,6 +13,8 @@ export class AccessibilityComponent implements OnInit {
 
   public record: Record;
   public records: Array<Record>;
+
+  public currentRecord: string;
   
 
   constructor() { }
@@ -25,6 +27,7 @@ export class AccessibilityComponent implements OnInit {
 
   onSubmit(newForm: NgForm): void {
     //
+    this.currentRecord = JSON.stringify(this.record);
     console.log(JSON.stringify(this.record));
     //
     newForm.reset();
