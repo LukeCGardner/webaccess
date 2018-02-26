@@ -1,3 +1,20 @@
-<p>
+<h1>
   accessibility works!
-</p>
+</h1>
+
+<form #newForm="ngForm" (ngSubmit)="onSubmit(newForm)" novalidate>
+  <h2>Contact Details</h2>
+  <div>
+    <label for="firstName">First Name: </label>
+    <input type="text" name="firstName" id="firstName" minlength="3" maxlength="30" placeholder="please enter the contact first name" [(ngModel)]="record.firstName" #firstName="ngModel">
+  </div>
+  <div>
+    <label for="lastName">Last Name: </label>
+    <input type="text" name="lastName" id="lastName" minlength="3" maxlength="30" placeholder="please enter the contact last name" [(ngModel)]="record.lastName" #lastName="ngModel">
+  </div>
+  <div>
+    <label for="emailAddress">Email: </label>
+    <input type="email" name="emailAddress" id="emailAddress" placeholder="please enter the contact email address" [(ngModel)]="record.emailAddress" #emailAddress="ngModel">
+  </div>
+  <input type="submit" value="Submit" />
+ </form>
