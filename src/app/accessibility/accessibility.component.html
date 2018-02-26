@@ -3,18 +3,39 @@
 </h1>
 
 <form #newForm="ngForm" (ngSubmit)="onSubmit(newForm)" novalidate>
-  <h2>Contact Details</h2>
-  <div>
-    <label for="firstName">First Name: </label>
-    <input type="text" name="firstName" id="firstName" minlength="3" maxlength="30" placeholder="please enter the contact first name" [(ngModel)]="record.firstName" #firstName="ngModel">
+  <label class="h2 col-3">New Record</label>
+
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input type="text" class="form-control" id="firstName" minlength="3" maxlength="30" placeholder="Please enter the first name"
+      name="firstName" [(ngModel)]="record.firstName" #firstName="ngModel" autofocus required>
+    <div *ngIf="firstName.errors && (firstName.dirty || firstName.touched)" class="alert alert-danger">
+      <div [hidden]="!firstName.errors.required">A name is required!</div>
+      <div [hidden]="!firstName.errors.minlength">the name must be at least 3 characters long.</div>
+      <div [hidden]="!firstName.errors.maxlength">the name cannot be more than 30 characters long.</div>
+    </div>
   </div>
-  <div>
-    <label for="lastName">Last Name: </label>
-    <input type="text" name="lastName" id="lastName" minlength="3" maxlength="30" placeholder="please enter the contact last name" [(ngModel)]="record.lastName" #lastName="ngModel">
+
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input type="text" class="form-control" id="lastName" minlength="3" maxlength="30" placeholder="Please enter the last name"
+      name="lastName" [(ngModel)]="record.lastName" #lastName="ngModel" required>
+    <div *ngIf="lastName.errors && (lastName.dirty || lastName.touched)" class="alert alert-danger">
+      <div [hidden]="!lastName.errors.required">A name is required!</div>
+      <div [hidden]="!lastName.errors.minlength">the name must be at least 3 characters long.</div>
+      <div [hidden]="!lastName.errors.maxlength">the name cannot be more than 30 characters long.</div>
+    </div>
   </div>
-  <div>
-    <label for="emailAddress">Email: </label>
-    <input type="email" name="emailAddress" id="emailAddress" placeholder="please enter the contact email address" [(ngModel)]="record.emailAddress" #emailAddress="ngModel">
+
+  <div class="form-group">
+    <label for="emailAddress">Email Address</label>
+    <input type="text" class="form-control" id="emailAddress" placeholder="Please enter an email address" name="emailAddress"
+      [(ngModel)]="record.emailAddress" #emailAddress="ngModel" required>
+    <div *ngIf="emailAddress.errors && (emailAddress.dirty || emailAddress.touched)" class="alert alert-danger">
+      <div [hidden]="!emailAddress.errors.required">An email address is required!</div>
+    </div>
   </div>
-  <input type="submit" value="Submit" />
- </form>
+  <button type="submit" class="_btn _btn-success" mat-raised-button color="accent" [disabled]="!newForm.form.valid">Submit</button>
+  <button type="button" class="_btn _btn-default" mat-raised-button color="primary" (click)="newForm.reset()">Clear</button>
+
+</form>

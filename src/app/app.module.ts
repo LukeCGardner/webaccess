@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { BaseNavComponent } from './core/base-nav/base-nav.component';
 import { AccessibilityComponent } from './accessibility/accessibility.component';
 import { PortalComponent } from './portal/portal.component';
 import { AppRoutingModule } from 'app/app-routing/app-routing.module';
@@ -11,6 +12,7 @@ import { AppRoutingModule } from 'app/app-routing/app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
+    BaseNavComponent,
     AccessibilityComponent,
     PortalComponent
   ],
